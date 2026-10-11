@@ -111,8 +111,8 @@ always_ff @(posedge clk) begin
             end
             NORMALIZE: begin 
                 if (Result[24]) begin //if 1 then carry was generated
-                    Result <= Result << 1;
-                    exponent_a <= exponent_a - 1; //both exponents will have the same value so it doesnt matter
+                    Result <= Result >> 1;
+                    exponent_a <= exponent_a + 1; //both exponents will have the same value so it doesnt matter
                 end
                 state_curr <= RES;
             end
