@@ -48,6 +48,33 @@ initial begin
     enable = 0;
 
     repeat(10)@(posedge clk);
+
+    A = 32'b1_1101_1101_10101111110001110011001;
+    B = 32'b0_1101_1101_10101100001110110001001;
+    repeat(2)@(posedge clk);
+    enable = 1;
+    @(posedge clk);
+    enable = 0;
+
+    repeat(20)@(posedge clk);
+
+    A = 32'b0_1101_1101_10101111111111110011001;
+    B = 32'b1_1110_0000_10101100001110110001001;
+    repeat(2)@(posedge clk);
+    enable = 1;
+    @(posedge clk);
+    enable = 0;
+
+    repeat(30)@(posedge clk);
+
+    A = 32'b1_1101_1101_10101111111111110011001;
+    B = 32'b1_1110_0000_10101100001110110001001;
+    repeat(2)@(posedge clk);
+    enable = 1;
+    @(posedge clk);
+    enable = 0;
+
+    repeat(30)@(posedge clk);
     $finish;
 end
 
